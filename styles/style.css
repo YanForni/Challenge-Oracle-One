@@ -146,4 +146,5 @@ aside p {
   background-color: #fff;
   color: var(--dark-blue);
   width: 85%;
+  margin-bottom: 1rem;
 }
