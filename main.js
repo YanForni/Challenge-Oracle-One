@@ -23,26 +23,25 @@ const decode = (string) => {
     .replaceAll("ufat", "u");
   return decodedString;
 };
-const useFn = (fn) => {
-  const message = fn(inputToEncode.value)
-  textMessage.textContent = message
-  inputToEncode.value = ""
-  nonEmpty.forEach(element=> {
+
+const displayChange = (firstArray, secondArray) =>{
+  firstArray.forEach(element=> {
     element.style.display = "none"
   })
-  empty.forEach(element=> {
+  secondArray.forEach(element=> {
     element.style.display = "block"
   })
 }
 
-console.log(navigator.clipboard)
+const useFn = (fn) => {
+  const message = fn(inputToEncode.value)
+  textMessage.textContent = message
+  inputToEncode.value = ""
+  displayChange(nonEmpty, empty)
+}
+
 const copy = () => {
   const textToCopy = textMessage.textContent
   navigator.clipboard.writeText(textToCopy)
-  nonEmpty.forEach(element=> {
-    element.style.display = "block"
-  })
-  empty.forEach(element=> {
-    element.style.display = "none"
-  })
+  displayChange(empty, nonEmpty)
 }
