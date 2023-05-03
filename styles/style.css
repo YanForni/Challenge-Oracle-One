@@ -130,7 +130,7 @@ aside p {
   display: none
 }
 
-.message--active {
+.message {
   font-style: normal;
   font-weight: 400;
   font-size: 1rem;
@@ -139,9 +139,8 @@ aside p {
   margin: 1.5rem;
 }
 
-.button-copy--active {
+.button-copy {
   background-color: #fff;
   color: var(--dark-blue);
   width: 85%;
-  
 }
